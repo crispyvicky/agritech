@@ -1,0 +1,53 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+.venv_plant/
+venv/
+*.pkl.bak
+
+# Node
+frontend/node_modules/
+frontend/build/
+npm-debug.log*
+
+# Large training datasets (not needed at runtime — embed indexes are enough)
+backend/PlantDoc-Dataset/
+backend/Soil/
+backend/uploaded_images/
+backend/temp_uploads/
+backend/processed_data/
+backend/data/raw/
+
+# Heavy / unused model artifacts (keep only embed indexes + small compat files)
+backend/models/_inspect_*/
+backend/models/_weights_*/
+backend/models/_convert_*/
+backend/models/_inspect_plantdoc.zip
+backend/models/plantdoc_best.keras
+backend/models/plantdoc_optimized*.keras
+backend/models/plantdoc_tf215.keras
+backend/models/plantdoc_compat.keras
+backend/models/plantdoc_model.h5
+backend/models/best_plantdoc_model.keras
+backend/models/plantdoc_mobilenet.keras
+backend/models/soil_classifier.keras
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# Local env
+.env
+.env.*
+
+# Logs / temp
+*.log
+backend/scripts/predicted_graphs/*.png
+!backend/scripts/predicted_graphs/.gitkeep
+
+docs/backshot final.pdf
