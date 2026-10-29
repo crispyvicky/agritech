@@ -10,6 +10,7 @@ import shutil
 import uuid
 from PIL import Image
 from fastapi.responses import JSONResponse
+from pydantic import BaseModel, Field
 import io
 import numpy as np
 import json
@@ -254,6 +255,34 @@ async def predict_soil(file: UploadFile = File(...)):
             "confidence": 0.0,
             "crops": [],
             "care": [],
+            "status": "error",
+        }
+
+# ✅ Crop Recommendation
+class CropInput(BaseModel):
+    N: float = Field(..., ge=0, le=200)
+    P: float = Field(..., ge=0, le=200)
+    K: float = Field(..., ge=0, le=250)
+    temperature: float = Field(..., ge=-10, le=60)
+    humidity: float = Field(..., ge=0, le=100)
+    ph: float = Field(..., ge=0, le=14)
+    rainfall: float = Field(..., ge=0, le=500)
+
+
+@app.post("/predict-crop")
+def predict_crop(data: CropInput):
+    try:
+        from predict_crop import recommend_crop
+
+        return recommend_crop(data.dict())
+    except Exception as e:
+        logger.error(f"Crop recommendation error: {str(e)}")
+        logger.error(traceback.format_exc())
+        return {
+            "error": "Unable to recommend a crop right now. Please check the inputs.",
+            "crop": None,
+            "confidence": 0.0,
+            "top3": [],
             "status": "error",
         }
 

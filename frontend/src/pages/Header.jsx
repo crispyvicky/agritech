@@ -46,6 +46,9 @@ const Header = () => {
           <a href="/#tools" onClick={handleToolsClick} className="text-sm font-medium text-white/85 hover:text-[#e8c468] no-underline">
             Tools
           </a>
+          <Link to="/crop-recommendation" className="text-sm font-medium text-white/85 hover:text-[#e8c468] no-underline">
+            Crop Advisor
+          </Link>
           {!isHome && (
             <Link
               to="/"
@@ -65,6 +68,7 @@ const Header = () => {
         <div className="md:hidden bg-[#1a2e1c] px-6 py-4 flex flex-col gap-3">
           <Link to="/" className="text-white no-underline" onClick={() => setMenuOpen(false)}>Home</Link>
           <a href="/#tools" onClick={handleToolsClick} className="text-white no-underline">Tools</a>
+          <Link to="/crop-recommendation" className="text-white no-underline">Crop Advisor</Link>
         </div>
       )}
     </header>

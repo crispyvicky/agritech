@@ -5,6 +5,7 @@ import HeroSection from './pages/HeroSection';
 import Dashboard from './pages/AgriDashboard';
 import PlantDiseaseDetection from './pages/PlantDiseaseDetection';
 import SoilPredictor from './pages/SoilPredictor';
+import CropRecommendation from './pages/CropRecommendation';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
         <Routes>
           <Route path="/disease-detection" element={<PlantDiseaseDetection />} />
           <Route path="/SoilPredictor" element={<SoilPredictor />} />
+          <Route path="/crop-recommendation" element={<CropRecommendation />} />
           <Route
             path="/"
             element={
@@ -46,7 +48,7 @@ function App() {
                 <footer className="bg-[#0f1f12] text-white/40 text-center text-sm py-8 px-4 border-t border-white/5">
                   <span className="font-display text-white/70">AgriTech</span>
                   <span className="mx-2">·</span>
-                  Plant disease &amp; soil image AI
+                  Plant disease, soil &amp; crop recommendation AI
                 </footer>
               </div>
             }

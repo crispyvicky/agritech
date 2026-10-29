@@ -34,28 +34,42 @@ const AgriDashboard = () => {
         </svg>
       ),
     },
+    {
+      id: 3,
+      title: 'Crop Recommendation',
+      description: 'Enter soil N-P-K, pH and local climate. The model recommends the best crop to sow.',
+      path: '/crop-recommendation',
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" className="w-10 h-10">
+          <path d="M12 21V10" />
+          <path d="M12 10c0-3.5 2.5-6 6-6 0 3.5-2.5 6-6 6z" />
+          <path d="M12 14c0-3-2.2-5-5-5 0 3 2.2 5 5 5z" />
+          <path d="M5 21h14" />
+        </svg>
+      ),
+    },
   ];
 
   return (
     <section id="tools" className="relative w-full min-h-[70vh] bg-[#152418] py-20 px-6 overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(232,196,104,0.08),transparent_40%),radial-gradient(circle_at_80%_70%,rgba(80,140,90,0.12),transparent_45%)]" />
 
-      <div className="max-w-4xl mx-auto relative z-10">
+      <div className="max-w-5xl mx-auto relative z-10">
         <header
           className={`text-center mb-12 transition-all duration-700 ${
             isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-6'
           }`}
         >
           <p className="text-[#e8c468] uppercase tracking-[0.2em] text-xs font-semibold mb-3">
-            Image AI tools
+            AI farming tools
           </p>
           <h2 className="font-display text-white text-4xl md:text-5xl mb-4">Farming tools</h2>
           <p className="text-white/60 max-w-lg mx-auto text-sm md:text-base">
-            Upload a photo — get a prediction. No fake stats, no wallet apps.
+            Upload a photo or enter field readings — get a prediction. No fake stats, no wallet apps.
           </p>
         </header>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
           {dashboardCards.map((card, index) => (
             <button
               key={card.id}

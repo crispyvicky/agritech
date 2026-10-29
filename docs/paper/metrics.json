@@ -1,0 +1,29 @@
+{
+  "leaf_disease": {
+    "eval_split": "PlantDoc-Dataset\\train",
+    "classes": 27,
+    "images": 2316,
+    "top1_accuracy": 0.2863,
+    "top3_accuracy": 0.5289,
+    "macro_f1": 0.2368,
+    "avg_latency_ms": 127.8
+  },
+  "soil_type": {
+    "eval_split": "Soil\\Train",
+    "classes": 4,
+    "images": 1170,
+    "top1_accuracy": 0.4632,
+    "top3_accuracy": 0.8094,
+    "macro_f1": 0.4971,
+    "avg_latency_ms": 86.4
+  },
+  "crop_recommendation": {
+    "eval_split": "stratified 20% test split",
+    "classes": 22,
+    "images": 440,
+    "top1_accuracy": 0.9955,
+    "top3_accuracy": 1.0,
+    "macro_f1": 0.9955,
+    "avg_latency_ms": 33.2
+  }
+}

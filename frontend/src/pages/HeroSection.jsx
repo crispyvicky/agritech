@@ -33,7 +33,7 @@ const HeroSection = () => {
             Detect plant disease &amp; soil type from photos
           </h1>
           <p className="text-base md:text-lg text-white/75 leading-relaxed mb-8 max-w-md">
-            Upload a leaf or soil image and get an AI prediction you can use for the farm.
+            Upload a leaf or soil image, or enter field readings for a crop recommendation you can use for the farm.
           </p>
           <button
             onClick={scrollToTools}

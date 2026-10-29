@@ -25,6 +25,7 @@ export const API_URL = API_CONFIG.getApiUrl();
 export const ENDPOINTS = {
   PREDICT_DISEASE: `${API_URL}/predict`,
   PREDICT_SOIL: `${API_URL}/predict-soil`,
+  PREDICT_CROP: `${API_URL}/predict-crop`,
   MARKET_PREDICTIONS: `${API_URL}/market-predictions`,
   HEALTH_CHECK: `${API_URL}/health`,
   DETAILED_HEALTH: `${API_URL}/healthz`
